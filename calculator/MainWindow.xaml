@@ -1,0 +1,95 @@
+﻿<Window x:Class="calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="345" Width="350"  MaxHeight="365" MaxWidth="350" PreviewKeyDown="OnKeyDown" MouseEnter="Window_MouseEnter" MouseLeave="Window_MouseLeave" >
+
+    <Window.Resources>
+
+
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" VerticalAlignment="Top" Height="20" Background="#FF363030" Foreground="White" >
+            <MenuItem x:Name="MenuStyle" Header="Вид" Background="#FF363030" MouseEnter="Window_MouseEnter" MouseLeave="Window_MouseLeave" Click="MenuStyle_Click">
+                <MenuItem x:Name="StyleOrdinary" Header="Обычный" Background="#FF363030" BorderBrush="Black" Click="OnMenuStyle_Click" ></MenuItem>
+                <MenuItem x:Name="StyleProgrammer" Header="Программист" Background="#FF363030" Click="OnMenuStyle2_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Правка"></MenuItem>
+        </Menu>
+
+        <Grid Background="#FF57504B" Grid.Row="1" >
+
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="48*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="69*"/>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="69*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="result" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4" TextAlignment="Right" BorderThickness="0" BorderBrush="Transparent"  Text="" Height="45" Background="#FF57504B" TextChanged="TextBoxResult_TextChanged" FontSize="25" IsReadOnly="True" Margin="0,0,0,29" Grid.RowSpan="2" />
+            <TextBox x:Name="example" Grid.ColumnSpan="6" TextAlignment="Right" BorderThickness="0" BorderBrush="Transparent" Text="" Height="45"  Background="#FF57504B" TextChanged="TextBoxExample_TextChanged" FontSize="25" IsReadOnly="True" Margin="0,0,0,29" Grid.RowSpan="2"/>
+            <TextBox x:Name="SaveBox" Grid.Row="1" TextAlignment="Right" BorderThickness="0" BorderBrush="Transparent"  Text="" Height="45" Background="#FF57504B" FontSize="25" TextChanged="SaveBox_TextChanged" IsReadOnly="True" Grid.ColumnSpan="2" Margin="0,0,0,29" Grid.RowSpan="2" />
+
+
+            <ComboBox x:Name="styleBox" Grid.ColumnSpan="2" />
+            <Button x:Name="Num8Btn" Tag="8" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick"  Grid.Column="2" Grid.Row="4" Content="8" />
+            <Button x:Name="Num5Btn" Tag="5" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Column="2" Grid.Row="5" Content="5" />
+            <Button x:Name="Num2Btn" Tag="2" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Column="2" Grid.Row="6" Content="2" />
+            <Button x:Name="Num9Btn" Tag="9" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Column="3" Grid.Row="4" Content="9" />
+            <Button x:Name="Num6Btn" Tag="6" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Column="3" Grid.Row="5" Content="6" />
+            <Button x:Name="Num7Btn" Tag="7" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Row="4" Content="7" Grid.ColumnSpan="2" />
+            <Button x:Name="Num4Btn" Tag="4" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Row="5" Content="4" Grid.ColumnSpan="2" />
+            <Button x:Name="Num1Btn" Tag="1" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Row="6" Content="1" Grid.ColumnSpan="2" />
+            <Button x:Name="Num0Btn" Tag="0" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Row="7" Grid.ColumnSpan="3" Content="0" />
+            <Button x:Name="Num3Btn" Tag="3" Style="{DynamicResource MyButtonStyle}" Click="OnDigitBtnClick" Grid.Column="3" Grid.Row="6" Content="3" />
+            <Button x:Name="CommaBtn" Tag="{x:Static local:Sign.Comma}" Style="{DynamicResource MyButtonStyle}" Grid.Column="3" Grid.Row="7" Content="."  Click="OnCommaBtnClick"  />
+
+            <Button x:Name="MrBtn" Tag="{x:Static local:Sign.MrBtn}" Style="{DynamicResource MyButton3Style}" Click="OnSaveInMemryClick" BorderThickness="0" BorderBrush="Transparent" Grid.Column="2" Grid.Row="2" Content="MR" />
+            <Button x:Name="MsBtn" Tag="{x:Static local:Sign.MsBtn}" Style="{DynamicResource MyButton3Style}" Click="OnSaveInMemryClick" BorderThickness="0" BorderBrush="Transparent" Grid.Column="3" Grid.Row="2" Content="MS"/>
+            <Button x:Name="McBtn" Tag="{x:Static local:Sign.McBtn}" Style="{DynamicResource MyButton3Style}" Click="OnSaveInMemryClick" BorderThickness="0" BorderBrush="Transparent" Grid.Row="2"  Content="MC" Grid.ColumnSpan="2" />
+            <Button x:Name="MPlus" Tag="{x:Static local:Sign.Mplus}" Style="{DynamicResource MyButton2Style}" Click="OnSaveInMemryClick"  Grid.Column="4" Grid.Row="2" Content="M+"/>
+            <Button x:Name="MSub" Tag="{x:Static local:Sign.Mminus}" Style="{DynamicResource MyButton2Style}" Click="OnSaveInMemryClick"  Grid.Column="5" Grid.Row="2" Content="M-"/>
+
+            <Button x:Name="DivisionBtn" Tag="{x:Static local:Sign.Div}" Style="{DynamicResource MyButton2Style}" Click="OnCalcBtnClick"  Grid.Column="4" Grid.Row="4" Content="/" />
+            <Button x:Name="MultiplicationBtn" Tag="{x:Static local:Sign.Mult}" Style="{DynamicResource MyButton2Style}" Click="OnCalcBtnClick"  Grid.Column="4" Grid.Row="5" Content="*" />
+            <Button x:Name="SubtractionBtn" Tag="{x:Static local:Sign.Minus}" Style="{DynamicResource MyButton2Style}" Click="OnCalcBtnClick"  Grid.Column="4" Grid.Row="6" Content="-" />
+            <Button x:Name="AdditionBtn" Tag="{x:Static local:Sign.Plus}" Style="{DynamicResource MyButton2Style}" Click="OnCalcBtnClick"  Grid.Column="4" Grid.Row="7" Content="+" />
+            <Button x:Name="REraseBtn" Tag="REraseBtn" Style="{DynamicResource MyButton2Style}" Click="OnCalcBtnClick"  Grid.Column="5" Grid.Row="3" Content=""/>
+            <Button x:Name="PercentBtn" Tag="{x:Static local:Sign.Perc}" Style="{DynamicResource MyButton2Style}" Click="OnCalcBtnClick"  Grid.Column="5" Grid.Row="4" Content="%"/>
+            <Button x:Name="FBtn" Tag="FBtn" Style="{DynamicResource MyButton2Style}" Click="OnCalcBtnClick"  Grid.Column="5" Grid.Row="5" Content="1/x"/>
+            <Button x:Name="EquallyBtn" Tag="{x:Static local:Sign.Equal}" Style="{DynamicResource MyButton2Style}" Click="OnEqualClick"  Grid.Column="5" Grid.Row="5" Grid.RowSpan="3" Content="=" />
+
+            <Button x:Name="CeBtn" Tag="{x:Static local:Sign.CeBtn}" Style="{DynamicResource MyButton3Style}" Click="OnClearBtnClick" BorderThickness="0" BorderBrush="Transparent" Grid.Column="2" Grid.Row="3" Content="CE"/>
+            <Button x:Name="CBtn" Tag="{x:Static local:Sign.CBtn}" Style="{DynamicResource MyButton3Style}" Click="OnClearBtnClick" BorderThickness="0" BorderBrush="Transparent" Grid.Column="3" Grid.Row="3" Content="C" />
+            <Button x:Name="ClearBtn" Tag="{x:Static local:Sign.ClearBtn}" Style="{DynamicResource MyButton3Style}" Click="OnClearBtnClick" BorderThickness="0" BorderBrush="Transparent" Grid.Row="3" Content="Clear" Grid.ColumnSpan="2" />
+            <Button x:Name="NegativeNumberBtn" Tag="{x:Static local:Sign.Negativ}" Style="{DynamicResource MyButton2Style}"   Grid.Column="4" Grid.Row="3" Content="+-" Click="NegativeNumberBtn_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>

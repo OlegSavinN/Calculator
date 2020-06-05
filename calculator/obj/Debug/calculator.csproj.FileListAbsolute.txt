@@ -1,0 +1,24 @@
+C:\Users\Олег\source\repos\calculator\calculator\bin\Debug\calculator.exe.config
+C:\Users\Олег\source\repos\calculator\calculator\bin\Debug\calculator.exe
+C:\Users\Олег\source\repos\calculator\calculator\bin\Debug\calculator.pdb
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator.csprojAssemblyReference.cache
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\MainWindow.g.cs
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\App.g.cs
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator_MarkupCompile.cache
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator_MarkupCompile.lref
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\MainWindow.baml
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator.g.resources
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator.Properties.Resources.resources
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator.csproj.GenerateResource.cache
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator.csproj.CoreCompileInputs.cache
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator.exe
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\calculator.pdb
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\Ordinary.baml
+C:\Users\Олег\source\repos\calculator\calculator\obj\Debug\Programmer.baml
+D:\programs\My project\calculator\calculator\obj\Debug\calculator.csprojAssemblyReference.cache
+D:\programs\My project\calculator\calculator\obj\Debug\MainWindow.g.cs
+D:\programs\My project\calculator\calculator\obj\Debug\App.g.cs
+D:\programs\My project\calculator\calculator\obj\Debug\calculator_MarkupCompile.cache
+D:\programs\My project\calculator\calculator\obj\Debug\calculator_MarkupCompile.lref
+D:\programs\My project\calculator\calculator\obj\Debug\calculator.exe
+D:\programs\My project\calculator\calculator\obj\Debug\calculator.pdb
